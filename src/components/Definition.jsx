@@ -26,11 +26,6 @@ const Definition = () => {
 				{data.data.map((item, id) => {
 					return <DefinitionListing key={id} item={item} />;
 				})}
-				{/* <p className=" font-serif text-2xl font-bold">{data.data[0].word}</p>
-				<p className=" text-lg">{data.data[0].phonetic}</p>
-				<p className=" mt-4">
-					{data.data[0].meanings[0].definitions[0].definition}
-				</p> */}
 			</div>
 		);
 	}

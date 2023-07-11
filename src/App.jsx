@@ -10,7 +10,7 @@ export default function App() {
 	const toggleDarkMode = () => {};
 
 	return (
-		<div className="flex h-screen flex-col dark:bg-darkModePrimary dark:text-darkModeWhite">
+		<div className="flex min-h-screen flex-col dark:bg-darkModePrimary dark:text-darkModeWhite">
 			<Navbar
 				isDarkMode={isDarkMode}
 				setisDarkMode={setisDarkMode}
