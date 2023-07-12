@@ -13,17 +13,25 @@ const DefinitionListing = ({ item, id }) => {
 				)}
 			</div>
 			{item.meanings.map((meaning, id) => {
-				const { antonyms, definitions, partOfSpeech, synonym } = meaning;
+				const { antonyms, definitions, partOfSpeech, synonyms } = meaning;
 				return (
-					<div className="mt-5">
+					<div className="mt-5" key={id}>
 						<p className=" font-bold">
 							{id + 1}. {partOfSpeech}
 						</p>
-						<p>
-							{definitions.map((item) => (
-								<p>{item.definition}</p>
-							))}
-						</p>
+
+						{definitions.map((item, id) => (
+							<p key={id}>{item.definition}</p>
+						))}
+						<div className="mt-3 flex flex-row flex-wrap gap-x-3 gap-y-3">
+							{synonyms.map((synonym) => {
+								return (
+									<div className="rounded-md border-gray-400 bg-gray-200 px-2">
+										{synonym}
+									</div>
+								);
+							})}
+						</div>
 					</div>
 				);
 			})}
