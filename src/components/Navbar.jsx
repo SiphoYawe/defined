@@ -2,10 +2,14 @@ import { GrSun } from "react-icons/gr";
 import { FaMoon } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ toggleDarkMode, isDarkMode }) => {
+const Navbar = ({ theme, setTheme }) => {
+	const toggleDarkMode = () => {
+		setTheme(theme === "dark" ? "light" : "dark");
+		console.log(theme);
+	};
 	return (
 		<>
-			<div className=" flex h-20  flex-grow-0 items-center border-b-2 dark:border-darkModeWhite">
+			<div className=" flex h-20  flex-grow-0 items-center border-b-2 dark:border-b dark:border-darkModeWhite">
 				<div
 					id="container"
 					className=" container m-auto flex flex-row justify-between">
@@ -17,8 +21,9 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
 						<button
 							id="theme-toggle"
 							type="button"
-							className=" flex h-10 w-10 items-center justify-center rounded-lg bg-slate-200 text-lg hover:bg-slate-300">
-							{isDarkMode ? <FaMoon /> : <GrSun />}
+							className=" flex h-10 w-10 items-center justify-center rounded-lg bg-slate-200 text-lg hover:bg-slate-300"
+							onClick={toggleDarkMode}>
+							{theme === "light" ? <FaMoon /> : <GrSun />}
 						</button>
 					</div>
 				</div>
