@@ -8,7 +8,7 @@ const Search = () => {
 	return (
 		<>
 			<form
-				className="mt-5 flex w-full flex-row px-8"
+				className=" mt-5 flex w-full flex-col px-8 md:flex-row"
 				onSubmit={(e) => {
 					e.preventDefault;
 
@@ -24,7 +24,7 @@ const Search = () => {
 					}}
 					value={searchTerm}
 				/>
-				<button className=" ml-3 bg-black px-12 py-3 text-sm text-white dark:bg-darkModeWhite dark:text-darkModeSecondary">
+				<button className=" bg-black px-12  py-3 text-sm text-white dark:bg-darkModeWhite dark:text-darkModeSecondary md:ml-3">
 					Search
 				</button>
 			</form>

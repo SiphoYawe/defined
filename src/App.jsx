@@ -2,20 +2,22 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Layout from "./components/Layout";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
-	const { isDarkMode, setisDarkMode } = useState(false);
+	const [theme, setTheme] = useState("light");
 
-	const toggleDarkMode = () => {};
+	useEffect(() => {
+		if (theme === "dark") {
+			document.documentElement.classList.add("dark");
+		} else {
+			document.documentElement.classList.remove("dark");
+		}
+	}, [theme]);
 
 	return (
 		<div className="flex min-h-screen flex-col dark:bg-darkModePrimary dark:text-darkModeWhite">
-			<Navbar
-				isDarkMode={isDarkMode}
-				setisDarkMode={setisDarkMode}
-				toggleDarkMode={toggleDarkMode}
-			/>
+			<Navbar theme={theme} setTheme={setTheme} />
 			<Layout />
 			<Footer />
 		</div>
