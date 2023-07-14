@@ -2,4 +2,4 @@
 
  🚧 Under Construction 🚧
 
- <https://defined-nu.vercel.app/>
+ <https://defined-app.vercel.app/>
